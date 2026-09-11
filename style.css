@@ -905,11 +905,11 @@ body.sun-chat-open .wa-float{opacity:0; pointer-events:none; transform:translate
 /* highway gantry set — three across in one row */
 .gal-stack{
   column-count:auto; column-gap:normal; max-width:none;
-  display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:16px; align-items:start;
 }
-.gal-stack .gal-item{margin:0; display:block; width:auto; break-inside:auto;}
-.gal-stack .gal-item img{width:100%; height:100%; object-fit:cover;}
-.gal-stack .gal-item figcaption{padding:14px 15px 13px;}
+.gal-stack .gal-item{margin:0; display:block; width:auto; height:auto; break-inside:auto; background:var(--navy-950);}
+.gal-stack .gal-item img{width:100%; height:auto; object-fit:contain; display:block; background:var(--navy-950);}
+.gal-stack .gal-item figcaption{position:static; background:var(--navy-850); padding:13px 15px 14px;}
 .gal-stack .gal-item figcaption strong{font-size:14px;}
 .gal-stack .gal-item figcaption span{font-size:10.5px;}
 @media (max-width:1080px){ .gal-stack{grid-template-columns:repeat(2,1fr);} }
@@ -1399,4 +1399,17 @@ body.sun-chat-open .wa-float{opacity:0; pointer-events:none; transform:translate
     position:static; background:var(--navy-850);
     padding:13px 15px 14px;
   }
+}
+
+/* road signs on phones: let the photos run close to full width */
+@media (max-width:760px){
+  .gal-stack{
+    margin-left:-14px; margin-right:-14px;
+    gap:20px;
+  }
+  .gal-stack .gal-item{border-radius:0;}
+  .gal-stack .gal-item img{border-radius:0;}
+  .gal-stack .gal-item figcaption{padding:14px 18px 16px;}
+  .gal-stack .gal-item figcaption strong{font-size:16px;}
+  .gal-stack .gal-item figcaption span{font-size:13px;}
 }
